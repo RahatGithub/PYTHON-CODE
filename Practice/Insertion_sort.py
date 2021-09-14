@@ -19,11 +19,11 @@ def insertionSort(array):
         array[j + 1] = key
 
 
-data = [9, 5, 1, 4, 3]
+data = [12, 74, 3, 69, 19, 58]
 
 insertionSort(data)
+
 
 print('Sorted Array in Ascending Order:')
 
 print(data)
-
