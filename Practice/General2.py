@@ -11,7 +11,7 @@ def Merge(a, b):
     
     while index_a < len_a and index_b < len_b:
         
-        if b[index_a] < b[index_b]:
+        if a[index_a] < b[index_b]:
             
             merged_list.append(a[index_a])
             
@@ -31,11 +31,11 @@ def Merge(a, b):
         
     if index_a < len_a: 
         
-        merged_list.append(a[index_a:])
+        merged_list.extend(a[index_a:])
     
     elif index_b < len_b:
         
-        merged_list.append(b[index_b:])
+        merged_list.extend(b[index_b:])
         
     """___________________________________________________________"""
     
@@ -62,7 +62,7 @@ def Merge_Sort(List):
     return Merge(left, right)
 
 
-
+"""Driver code"""
 
 if __name__ == '__main__':
     

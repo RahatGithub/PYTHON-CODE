@@ -1,44 +1,88 @@
-def merge_sort(arr):
-    if len(arr)<=1:
-        return
+def Merge(a, b):
     
-    mid = len(arr)//2
-    left = arr[:mid]
-    right = arr[mid:]
+    len_a, len_b = len(a), len(b)
     
-    merge_sort(left)
-    merge_sort(right)
+    index_a, index_b = 0, 0
     
-    merge_two_sorted_arr(left, right, arr)
-
-def merge_two_sorted_arr(a, b, arr):
-    len_a = len(a)
-    len_b = len(b)
-    i=j=k=0
-    while i<len_a and j<len_b:
-        if a[i]<=b[j]:
-            arr[k] = a[i]
-            i+=1
-            k+=1
+    merged_list = []
+    
+    """Camparing elements of two sorted arrays and pushing them to the 
+    merged list in accending order"""
+    
+    while index_a < len_a and index_b < len_b:
+        
+        if a[index_a] < b[index_b]:
+            
+            merged_list.append(a[index_a])
+            
+            index_a += 1
+        
         else:
-            arr[k] = b[j]
-            j+=1
-            k+=1
-    while i<len_a:
-        arr[k] = a[i]
-        i+=1
-        k+=1
-    while j<len_b:
-        arr[k] = b[j]
-        j+=1
-        k+=1
+            
+            merged_list.append(b[index_b])
+            
+            index_b += 1
+            
+    """___________________________________________________________"""
     
-array_set = [
-    [3,2,6,1,5],
-    [9,12,6,10,3,5],
-    [1,18,9,3,6,27,15,12,21]
-    ]
+    
+        
+    """Pushing the remaining elements that are either in A or B"""
+        
+    if index_a < len_a: 
+        
+        merged_list.extend(a[index_a:])
+    
+    elif index_b < len_b:
+        
+        merged_list.extend(b[index_b:])
+        
+    """___________________________________________________________"""
+    
+    return merged_list
 
-for arr in array_set:
-    merge_sort(arr)
-    print(arr)
+
+
+"""The actual merge sort with recursion"""
+
+
+def Merge_Sort(List):
+    
+    if len(List) <= 1 :
+    
+        return List
+    
+    
+    mid = len(List) // 2
+    
+    left = Merge_Sort(List[:mid])
+    
+    right = Merge_Sort(List[mid:])
+    
+    return Merge(left, right)
+
+
+"""Driver code"""
+
+if __name__ == '__main__':
+    
+    List = [int(x) for x in input().split()]
+    
+    print(Merge_Sort(List))
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
