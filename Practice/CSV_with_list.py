@@ -24,7 +24,7 @@ with open("products.csv", "w") as csv_file:
 
 # =============================================================================
 
-"""HOW TO READ FROM A CSV FILE"""
+# HOW TO READ FROM A CSV FILE
 
 # import csv
 # 
