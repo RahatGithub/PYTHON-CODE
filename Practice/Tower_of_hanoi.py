@@ -1,15 +1,14 @@
 
-def TowerOfHanoi(num_of_disks, source, destination, auxiliary):
+def TowerOfHanoi(n, src, aux, des):
     
     
-    if num_of_disks > 0:
+    if n > 0:
         
-        TowerOfHanoi(num_of_disks - 1, source, auxiliary, destination)
+        TowerOfHanoi(n - 1, src, des, aux)
         
-        print("Move a disk from", source, "to", destination)
+        print("Move a disk from", src, "to", des, "\n")
         
-        TowerOfHanoi(num_of_disks -1, auxiliary, destination, source)
+        TowerOfHanoi(n -1, aux, src, des)
     
 
-TowerOfHanoi(3, 'S', 'D', 'A')
-
+TowerOfHanoi(4, 'Left', 'Mid', 'Right')
