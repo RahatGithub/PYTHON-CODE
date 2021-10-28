@@ -1,42 +1,22 @@
-class Node:
-    def __init__(self, value):
-        self.prev = None
-        self.next = None
+class LinkedList:
+    def __init__(self, value, nextNode=None):
         self.value = value
+        self.nextNode = nextNode
 
 
+node1 = LinkedList("Afghanistan")
+node2 = LinkedList("India")
+node3 = LinkedList("England")
+node4 = LinkedList("Israel")
 
-class DoubleLinkedList:
-    def __init__(self):
-        self.head = None
-        self.tail = None
-        self.size = 0
-    
-    def add(self, value):
-        node = Node(value)
-        if self.tail is None:
-            self.head = node
-            self.tail = node
-            self.size += 1
-        else:
-            self.tail.next = node
-            node.prev = self.head 
-            self.tail = node
-            self.size += 1
-    
-    def __str__(self):
-        values = []
-        node = self.head 
-        while node is not None:
-            values.append(node.value)
-            node = node.next
-        return f"[{','.join(str(value) for value in values)}]"
+node1.nextNode = node3
+node3.nextNode = node4 
+node4.nextNode = node2
 
-
-my_list = DoubleLinkedList()
-my_list.add(9)
-my_list.add(2)
-my_list.add(5)
-my_list.add(1)
-
-print(my_list)
+currentNode = node1
+while True:
+    print(currentNode.value, "->", end=" ")
+    if currentNode.nextNode is None:
+        print("None")
+        break  
+    currentNode = currentNode.nextNode
