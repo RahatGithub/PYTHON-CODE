@@ -3,16 +3,16 @@ Time complexity: O(n) """
 
 def prime(n):
     divisors = 0
-    for i in range(1, n+1):
+    for i in range(1, n+1): #[1,n]
         if n%i == 0:
             divisors += 1
     
     print(divisors)
 
     if divisors == 2: 
-        return True
+        return "Prime"
     else: 
-        return False
+        return "Not prime"
 
 
 n = int(input())

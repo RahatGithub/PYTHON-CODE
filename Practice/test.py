@@ -1,17 +1,4 @@
-""" Checking if a number is PRIME or not. 
-Time complexity: O(root(n)) """
+import math
 
-def prime(n):
-
-    from math import sqrt, ceil
-
-    for i in range(1, ceil(sqrt(n))):
-        if n%i == 0 and not i==1:
-            return 'Not prime' 
-        
-    return 'Prime' 
-
-
-n = int(input())
-
-print(prime(n))
+val = (3,4,2,5) 
+print(math.prod(val))
