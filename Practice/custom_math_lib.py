@@ -1,6 +1,7 @@
 import math
 
 
+# Returns a list of all prime numbers from 2 to n
 def primes_less_than(n):
     
     if n<=2: 
@@ -17,10 +18,4 @@ def primes_less_than(n):
     
     return [i for i in range(n+1) if is_prime[i] == True]
 
-
-
-if __name__ == '__main__':
-
-    n = int(input("Enter a number: "))
-    print(primes_less_than(n))
 

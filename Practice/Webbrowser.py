@@ -1,3 +1,3 @@
-import webbrowser as any_name
+import webbrowser as wb
 url = 'www.actuatebd.com'
-any_name.open(url)
+wb.open(url)

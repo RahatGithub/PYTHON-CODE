@@ -108,7 +108,3 @@ if __name__ == '__main__':
         csv_writer.writeheader()
         
         crawl_website()
-    
-    
-    
-    
