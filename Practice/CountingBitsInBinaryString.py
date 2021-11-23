@@ -1,4 +1,4 @@
-"""Counting the number of 0/1s in the binary representation of a positive integer"""
+"""Counting the number of 0s/1s in the binary representation of a positive integer"""
 
 # counting the number of 1s in the binary representation of num
 def countbits(num):  

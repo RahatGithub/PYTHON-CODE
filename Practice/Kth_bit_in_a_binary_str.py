@@ -2,17 +2,17 @@
 
 def KthBit(n, k):
     
-    if n & (1 << (k-1)):   # It will have a value except 0 only for 1s 
+    if n & (1 << (k-1)):   # If this gives a value other then 0, then it is SET or 1 
         
         return "SET"
     
-    else:                  # Else it is 0
+    else:                  # Else it is NOT SET or 0
         
         return "NOT SET" 
         
 
-num, desiredPosition = map(int, input().split())
+num, pos = map(int, input().split())
 
-res = KthBit(num, desiredPosition)
+res = KthBit(num, pos) 
 
 print(bin(num)[2:], res)
