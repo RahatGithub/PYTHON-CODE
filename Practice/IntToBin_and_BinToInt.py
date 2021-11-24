@@ -2,12 +2,10 @@
 
 # Converting integer to binary string
 def IntToBin(num):
-    
     return bin(num)[2:]
 
 # Converting binary string to integer
 def BinToInt(s):
-    
     return int(s,2) # Here, the second parameter '2' referes the number system of 's', that is 2-based or Binary system
 
 

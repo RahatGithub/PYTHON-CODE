@@ -15,5 +15,5 @@
 10 << 4 # output: 160; Formula: m << n = m*(2**n) [multiplies with the power of 2]
 
 # Right shift
-40 << 3 # output: 5; Formula: m >> n = m/(2**n) [devides by the power of 2]
+40 << 3 # output: 5; Formula: m >> n = m//(2**n) [devides by the power of 2 and returns the integer part only]
 
