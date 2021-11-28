@@ -1,15 +1,14 @@
-t = int(input())
-
-for _ in range(t):
+for t in range(int(input())):
     
-    computers, cables = map(int, input().split())
+	computers, cables = map(int, input().split())
     
-    ready, hours = 1, 0
+	hours, ready = 0, 1
     
-    while ready < computers:
+	while(cables > ready):
+		ready *= 2
+		hours += 1
         
-        ready += min(ready, cables)
-        hours += 1
-            
+	if(computers > ready):
+		hours += (computers - ready + cables - 1)//cables
         
-    print(hours)
+	print(hours)
