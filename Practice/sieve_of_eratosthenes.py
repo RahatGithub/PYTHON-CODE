@@ -13,7 +13,7 @@ def primes_in_range(n):
 
     for i in range(2, isqrt(n)+1):                                 # We need to check from 2 to only the square root of the number
 
-        if is_prime[i] == True:                                    # If 'i' is a prime number then we need to mark all its multiples except itself
+        if is_prime[i] == True:                                    # If 'i' is a prime number then we need to mark all its multiples as False, except itself
 
             for x in range(i*i, n+1, i):                           # We can check from i*i because all numbers less than i*i should have already marked. We'll iterate till 'n' by making 'i' leaps/steps each time.
                 

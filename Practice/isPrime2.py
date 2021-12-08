@@ -1,7 +1,7 @@
 """ Checking if a number is PRIME or not. 
     Time complexity: O(root(n)) """
 
-def prime(n):
+def isPrime(n):
 
     from math import sqrt, ceil
 
@@ -14,4 +14,4 @@ def prime(n):
 
 n = int(input())
 
-print(prime(n))
+print(isPrime(n))
