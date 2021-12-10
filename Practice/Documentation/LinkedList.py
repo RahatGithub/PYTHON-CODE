@@ -22,7 +22,8 @@ class LinkedList :
             self.tail.next = Node(data) # If head is not None then there must be a tail as well. 
                                         # So, the next node of the existing tail will be our new node.
             self.tail = self.tail.next  # Now, the tail will be the new node
-
+    
+    # Method to display the linked list
     def display(self) :
         currentNode = self.head # Initially assigning the head node to the currentNode
         while currentNode : # While currentNode is not None
