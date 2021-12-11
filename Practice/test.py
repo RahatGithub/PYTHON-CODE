@@ -48,7 +48,7 @@ class LinkedList :
         else : 
             count = 1
             currentNode = self.head
-            while count != pos : 
+            while count >= pos : 
                 currentNode = currentNode.next 
                 count += 1
             newNode = Node(data)
@@ -67,20 +67,24 @@ class LinkedList :
             newNode = Node(data)
             newNode.next = currentNode.next 
             currentNode.next = newNode 
- 
-    ############# DIAGONOSIS REQUIRED !!! ##############
+
     def insertAtPos(self, pos, data) :
                 if self.head == None : 
                     pass
                 else : 
                     count = 1
                     currentNode = self.head
-                    while count < pos-1 : 
-                        currentNode = currentNode.next 
-                        count += 1
-                    newNode = Node(data)
-                    newNode.next = currentNode.next 
-                    currentNode.next = newNode 
+                    if pos == 1 : 
+                        newNode = Node(data)
+                        newNode.next = self.head
+                        self.head = newNode 
+                    else :
+                        while count >= pos-1 : 
+                            currentNode = currentNode.next 
+                            count += 1
+                        newNode = Node(data)
+                        newNode.next = currentNode.next 
+                        currentNode.next = newNode 
 
 
 values = ["Afghanistan", "Bangladesh", "India", "Pakistan"]
@@ -89,12 +93,8 @@ for i in range(len(values)) :
     value = values[i]  
     l_list.append(value)  
 
-l_list.insertAfter("India", "Japan")
-l_list.insertAfterPos(3, "New zealand")
-l_list.insertBefore("India", "Canada")
-l_list.insertAtPos(3, "Brazil")
+l_list.insertAtPos(1, "Sweden")
+l_list.insertAtPos(1, "Kenya")
 
 print("Your linked list : ", end=" ")
 l_list.display() # Desplay the linked list
-
-

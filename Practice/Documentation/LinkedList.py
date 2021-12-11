@@ -13,7 +13,7 @@ class LinkedList :
         self.head = None 
         self.tail = None 
     
-    # Method to append new data/node in the list
+    # Append new data/node in the list
     def append(self, data) :
         if self.head == None :  # If there is no head element; means if the list is empty
             self.head = Node(data) # Creating a new node and declaring it as the head of the list
@@ -23,7 +23,64 @@ class LinkedList :
                                         # So, the next node of the existing tail will be our new node.
             self.tail = self.tail.next  # Now, the tail will be the new node
     
-    # Method to display the linked list
+    # Insert a node in a specific position
+    def insertAtPos(self, pos, data) :
+                if self.head == None : 
+                    pass # Don't do anything if the list is empty
+                else : 
+                    count = 1
+                    currentNode = self.head
+                    if pos == 1 : 
+                        newNode = Node(data)
+                        newNode.next = self.head
+                        self.head = newNode 
+                    else :
+                        while count >= pos-1 : 
+                            currentNode = currentNode.next 
+                            count += 1
+                        newNode = Node(data)
+                        newNode.next = currentNode.next 
+                        currentNode.next = newNode 
+
+    # Insert a node after a specific node
+    def insertAfter(self, existingValue, data) :
+        if self.head == None : 
+            pass # Don't do anything if the list is empty
+        else : 
+            currentNode = self.head 
+            while currentNode.data != existingValue : 
+                currentNode = currentNode.next 
+            newNode = Node(data)
+            newNode.next = currentNode.next 
+            currentNode.next = newNode 
+
+    # Insert a node after a specific position
+    def insertAfterPos(self, pos, data) : 
+        if self.head == None : 
+            pass # Don't do anything if the list is empty
+        else : 
+            count = 1
+            currentNode = self.head
+            while count != pos : 
+                currentNode = currentNode.next 
+                count += 1
+            newNode = Node(data)
+            newNode.next = currentNode.next 
+            currentNode.next = newNode 
+
+    # Insert a node before a specific node
+    def insertBefore(self, existingValue, data) :
+        if self.head == None : 
+            pass # Don't do anything if the list is empty
+        else : 
+            currentNode = self.head 
+            while currentNode.next.data != existingValue : 
+                currentNode = currentNode.next 
+            newNode = Node(data)
+            newNode.next = currentNode.next 
+            currentNode.next = newNode 
+
+    # Display the linked list
     def display(self) :
         currentNode = self.head # Initially assigning the head node to the currentNode
         while currentNode : # While currentNode is not None
