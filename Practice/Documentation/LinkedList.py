@@ -26,7 +26,7 @@ class LinkedList :
     # Insert a node in a specific position
     def insertAtPos(self, pos, data) :
                 if self.head == None : 
-                    pass # Don't do anything if the list is empty
+                    return # Don't do anything if the list is empty
                 else : 
                     count = 1
                     currentNode = self.head
@@ -45,7 +45,7 @@ class LinkedList :
     # Insert a node after a specific node
     def insertAfter(self, existingValue, data) :
         if self.head == None : 
-            pass # Don't do anything if the list is empty
+            return # Don't do anything if the list is empty
         else : 
             currentNode = self.head 
             while currentNode.data != existingValue : 
@@ -57,7 +57,7 @@ class LinkedList :
     # Insert a node after a specific position
     def insertAfterPos(self, pos, data) : 
         if self.head == None : 
-            pass # Don't do anything if the list is empty
+            return # Don't do anything if the list is empty
         else : 
             count = 1
             currentNode = self.head
@@ -71,7 +71,7 @@ class LinkedList :
     # Insert a node before a specific node
     def insertBefore(self, existingValue, data) :
         if self.head == None : 
-            pass # Don't do anything if the list is empty
+            return # Don't do anything if the list is empty
         else : 
             currentNode = self.head 
             while currentNode.next.data != existingValue : 
@@ -86,6 +86,20 @@ class LinkedList :
         while currentNode : # While currentNode is not None
             print(currentNode.data, end=" ") # Print the value/data of that node
             currentNode = currentNode.next  # Now the currentNode will be the next node of already printed node
+
+    # Sort the linked list
+    def sort(self) :
+        if self.head == None : 
+            return # Don't do anything if the list is empty
+        else : 
+            currentNode = self.head 
+            while currentNode : 
+                checkNode = currentNode.next # Always assign the checkNode as the next node of currentNode
+                while checkNode : # Iterate through the list while checkNode is not None
+                    if currentNode.data > checkNode.data : 
+                        currentNode.data, checkNode.data = checkNode.data, currentNode.data # Swap currentNode data and checkNode data
+                    checkNode = checkNode.next 
+                currentNode = currentNode.next 
 
 
 n = int(input("Number of nodes in your linked list: ")) 

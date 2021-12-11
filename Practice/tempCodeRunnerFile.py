@@ -1,1 +1,1 @@
-l_list.insertAtPos(3, "Brazil")
+l_list.deleteFromPos(5)

@@ -1,100 +1,61 @@
-# To create new node
 class Node : 
     def __init__(self, data) :
         self.data = data
         self.next = None 
-    
 
-# To create new linked list
+
 class LinkedList : 
-
     def __init__(self) :
-        # Initializing both head and tail of the list with None
-        self.head = None 
+        self.head = None
         self.tail = None 
-    
-    # Method to append new data/node in the list
+
+
     def append(self, data) :
-        if self.head == None :  # If there is no head element; means if the list is empty
-            self.head = Node(data) # Creating a new node and declaring it as the head of the list
-            self.tail = self.head # As the head is the only element so the tail will also be the same
-        else :
-            self.tail.next = Node(data) # If head is not None then there must be a tail as well. 
-                                        # So, the next node of the existing tail will be our new node.
-            self.tail = self.tail.next  # Now, the tail will be the new node
+        if self.head == None :
+            self.head = Node(data)
+            self.tail = self.head 
+        else : 
+            self.tail.next = Node(data) 
+            self.tail = self.tail.next 
+
+    def deleteFromPos(self, pos) :
+        if self.head != None : 
+            currentNode = self.head
+            for i in range(1,pos-1) :
+                if currentNode.next != None : 
+                    currentNode = currentNode.next 
+            currentNode.next = currentNode.next.next 
+
+
+    def sort(self) :
+        if self.head == None : 
+            return 
+        else : 
+            currentNode = self.head 
+            while currentNode : 
+                checkNode = currentNode.next
+                while checkNode : 
+                    if currentNode.data > checkNode.data : 
+                        currentNode.data, checkNode.data = checkNode.data, currentNode.data 
+                    checkNode = checkNode.next 
+                currentNode = currentNode.next 
+
 
     def display(self) :
-        currentNode = self.head # Initially assigning the head node to the currentNode
-        while currentNode : # While currentNode is not None
-            print(currentNode.data, end=" -> ") # Print the value/data of that node
-            currentNode = currentNode.next  # Now the currentNode will be the next node of already printed node
-
-
-    def insertAfter(self, existingValue, data) :
-        if self.head == None : 
-            pass
-        else : 
+        if self.head != None :
             currentNode = self.head 
-            while currentNode.data != existingValue : 
-                currentNode = currentNode.next 
-            newNode = Node(data)
-            newNode.next = currentNode.next 
-            currentNode.next = newNode 
+            while currentNode : 
+                print(currentNode.data, end=" --> ")
+                currentNode = currentNode.next
 
+l_list = LinkedList() 
 
-    def insertAfterPos(self, pos, data) : 
-        if self.head == None : 
-            pass
-        else : 
-            count = 1
-            currentNode = self.head
-            while count >= pos : 
-                currentNode = currentNode.next 
-                count += 1
-            newNode = Node(data)
-            newNode.next = currentNode.next 
-            currentNode.next = newNode 
+values = [6, 2, 3, 1, 5, 8, 4, 7]
 
-    
-    def insertBefore(self, existingValue, data) :
-        if self.head == None : 
-            pass 
-        else : 
-            currentNode = self.head 
-            # try an alternative to check currentNode.next.data 
-            while currentNode.next.data != existingValue : 
-                currentNode = currentNode.next 
-            newNode = Node(data)
-            newNode.next = currentNode.next 
-            currentNode.next = newNode 
+for value in values : 
+    l_list.append(value)
 
-    def insertAtPos(self, pos, data) :
-                if self.head == None : 
-                    pass
-                else : 
-                    count = 1
-                    currentNode = self.head
-                    if pos == 1 : 
-                        newNode = Node(data)
-                        newNode.next = self.head
-                        self.head = newNode 
-                    else :
-                        while count >= pos-1 : 
-                            currentNode = currentNode.next 
-                            count += 1
-                        newNode = Node(data)
-                        newNode.next = currentNode.next 
-                        currentNode.next = newNode 
+l_list.sort()
 
-
-values = ["Afghanistan", "Bangladesh", "India", "Pakistan"]
-l_list = LinkedList()
-for i in range(len(values)) : 
-    value = values[i]  
-    l_list.append(value)  
-
-l_list.insertAtPos(1, "Sweden")
-l_list.insertAtPos(1, "Kenya")
-
-print("Your linked list : ", end=" ")
-l_list.display() # Desplay the linked list
+print("Your linked list : ")
+l_list.display()
