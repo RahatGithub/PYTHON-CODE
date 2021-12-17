@@ -1,1 +1,1 @@
-l_list.deleteFromPos(5)
+ll.DeleteFromEnd()
