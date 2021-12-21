@@ -1,4 +1,4 @@
-# To create new node
+# To create a new node
 class Node : 
     def __init__(self, data) :
         self.data = data
@@ -12,14 +12,12 @@ class DoublyLinkedList :
         # Initializing the head of the list with None
         self.head = None
     
-
     def InsertToStart(self, data) :
         node = Node(data)
         if self.head != None : 
             self.head.prev = node 
             node.next = self.head 
         self.head = node  
-
 
     def InsertToEnd(self, data) :
         node = Node(data)
@@ -31,7 +29,6 @@ class DoublyLinkedList :
                 temp = temp.next 
             temp.next = node 
             node.prev = temp
-    
     
     def InsertToPos(self, data, pos) :
         if pos == 1 : 
@@ -51,8 +48,6 @@ class DoublyLinkedList :
                 temp.prev.next = node 
                 temp.prev = node 
 
-
-
     def DeleteFromStart(self) :
         if self.head == None : 
             print("The list is empty!")
@@ -61,7 +56,6 @@ class DoublyLinkedList :
         else : 
             self.head.next.prev = None 
             self.head = self.head.next 
-
 
     def DeleteFromEnd(self) :
         if self.head == None : 
@@ -74,7 +68,6 @@ class DoublyLinkedList :
                 temp = temp.next 
             temp.prev.next = None 
             temp.prev = None 
-
 
     def DeleteFromPos(self, pos) :
         if self.head == None : 
@@ -93,7 +86,6 @@ class DoublyLinkedList :
                 temp.prev.next = temp.next
                 temp.next.prev = temp.prev 
             
-
     def Display(self) :
         if self.head == None : 
             print("The list is empty!")
@@ -109,5 +101,5 @@ values = [3, 4, 5, 1, 9, 2]
 for value in values : 
     ll.InsertToEnd(value)
 
-ll.InsertToPos(404, 7)
+ll.InsertToPos(404, 4)
 ll.Display()
