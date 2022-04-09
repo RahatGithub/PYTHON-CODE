@@ -1,5 +1,5 @@
-name = 'Rahat'
-new_name = name.replace('hat', 'sel')
+txt = "go to room no.2"
 
-print(name)
-print(new_name)
+cap_txt = txt.capitalize()
+
+print(cap_txt)
