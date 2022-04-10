@@ -1,5 +1,5 @@
-nums = [12, 34, 12, 35, 67, 12]
+friends = ['Omur', 'Ashfak', 'Tanjim', 'Tanjil']
+print(friends)
 
-twelve = nums.count(132)
-
-print(twelve)
+del friends[1:3]
+print(friends)
