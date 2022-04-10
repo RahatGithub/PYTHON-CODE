@@ -40,6 +40,7 @@ allFruits = [*summerFruits, *winterFruits, 'Guava', 'Papaya']
 
 # To find the index of a specific element's first occurrance. Throws an error if the element is missing in the list
 allFruits.index('Orange')
+<<<<<<< HEAD
 
 
 # To reverse the order of the list 
@@ -56,3 +57,5 @@ del allFruits[2:5]  # Deletes from 2nd to 4th element
 
 # Clears all the elements from the list
 allFruits.clear()
+=======
+>>>>>>> 61f681f0966cca2933e4fd456403a14f6fbed087
