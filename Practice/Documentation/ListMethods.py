@@ -4,6 +4,19 @@ nums = [12, 45, 23, 87, 23, 45, 90, 117, 12]
 nums.append(34)
 
 
+# To insert an element at a specific index. syntax: list.insert(index, value)
+nums.insert(3, 100)
+
+
+# To pop an element of the list. If the index is not given as parameter then it pops off the last element of the list
+nums.pop(2)
+
+
+# To remove a specific element of a list
+friends = ['Junaed', 'Kabir', 'Shaikat', 'Monon']
+friends.remove('Shaikat')
+
+
 # To copy 'nums' list to 'nums2' variable. As lists are mutable objects, if it was 'nums2 = nums' then applying a method on one of them 
 # will automatically affect the other. That's why we take a copy of 'nums' as 'nums2' and change it as our wish without affecting 'nums'. 
 nums2 = nums.copy()
@@ -25,4 +38,5 @@ winterFruits = ['Apple', 'Orange']
 allFruits = [*summerFruits, *winterFruits, 'Guava', 'Papaya']
 
 
-# 
+# To find the index of a specific element's first occurrance. Throws an error if the element is missing in the list
+allFruits.index('Orange')
