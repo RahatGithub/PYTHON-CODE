@@ -1,5 +1,5 @@
-txt = "go to room no.2"
+nums = [12, 34, 12, 35, 67, 12]
 
-cap_txt = txt.capitalize()
+twelve = nums.count(132)
 
-print(cap_txt)
+print(twelve)
