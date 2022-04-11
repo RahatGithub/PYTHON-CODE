@@ -14,7 +14,7 @@ favFruits.keys()
 
 
 # Returns a list of all the values in the dictionary
-favFruits.values
+favFruits.values()
 
 
 # Pops the last item/key-value pair
