@@ -8,21 +8,19 @@ length = len(ages)                     #Finds the length of the set
 
 ages = sorted(ages)                    #Now 'ages' becomes a list with sorted values of set 'ages'
 
-ages = set(ages)                       #Again 'ages' becomes a set, but this time it will print a sorted set because previously it was a sorted list
-
 ages = {x*2 for x in ages}             #Set comprehension applied which doubled each element of 'ages' 
 
 ages.add(55)                           #New element added to the set. Only one element can be added by '.add()'
 
 ages.pop()                             #Pops off an element randomly. Only one at a time
 
-ages.remove(58)                        #Removes the specific element
+ages.remove(58)                        #Removes the specific element. It throws an error if the element is not there
 
-ages.discard(420)                      #Removes the specific element
+ages.discard(420)                      #Removes the specific element. It does nothing if the element is not there
 
 
-""".remove() raises an error when the specified element doesn't exist in the given set,
-but .discard() doesn't raise any error if the specified element is not present in the 
+""".remove() raises an error when the specific element doesn't exist in the given set,
+but .discard() doesn't raise any error if the specific element is not present in the 
 set and the set remains unchanged"""
 
 
