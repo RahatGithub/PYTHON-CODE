@@ -9,5 +9,5 @@ if num_of_row > 0:
         for i in range: print("*" * i)
     except:
         print("Check your input and enter a valid one")
-else: 
+else:
     print("Give a valid input. Number of rows can't be less than or equal to zero")
