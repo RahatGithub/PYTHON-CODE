@@ -1,17 +1,11 @@
-file = open("Documentation/TextFiles/introduction.txt", "r")
+def readFile(characters):
+    """readFile(n) takes the number of characters to read as the function argument and prints the text"""
+    with open("Documentation/TextFiles/introduction.txt", "r") as file:
+        content = file.read(characters)
+        print(content)
+        print(file.tell())
 
-print(file.tell())  # printing the file pointer position
+readFile(32)
+readFile(104)
 
-print(file.read(20))
-
-print(file.tell())  # printing the file pointer position
-
-print(file.read(10))
-
-print(file.tell())  # printing the file pointer position
-
-file.seek(0)
-
-print(file.read(15))
-
-file.close()
+print(readFile.__doc__)
