@@ -1,13 +1,17 @@
-num_of_row = int(input("Enter the number of rows: "))
-tilt = input("Enter 0 or 1 for tilt position: ")
+file = open("Documentation/TextFiles/introduction.txt", "r")
 
-if tilt == '0': range = range(1, num_of_row)
-elif tilt == '1': range = range(num_of_row, 0, -1)
+print(file.tell())  # printing the file pointer position
 
-if num_of_row > 0:
-    try:
-        for i in range: print("*" * i)
-    except:
-        print("Check your input and enter a valid one")
-else: 
-    print("Give a valid input. Number of rows can't be less than or equal to zero")
+print(file.read(20))
+
+print(file.tell())  # printing the file pointer position
+
+print(file.read(10))
+
+print(file.tell())  # printing the file pointer position
+
+file.seek(0)
+
+print(file.read(15))
+
+file.close()
