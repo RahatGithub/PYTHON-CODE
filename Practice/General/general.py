@@ -1,17 +1,10 @@
-import time
+# reduce() returns a value by processing an iterable
 
-init1 = time.time()
-x = 0
-for i in range(1, 100001): x+=1
-time.sleep(1)
-final1 = time.time()
-print(f"Total time for FOR loop: {final1-init1}")
+from functools import reduce
 
-init2 = time.time()
-x = 0
-i = 0
-while i < 100000:
-    x+=1
-    i+=1
-final2 = time.time()
-print(f"Total time for WHILE loop: {final2-init2}")
+steps = ["turn on", "go to cmd", "run the command lines"]
+
+sum_of_numbers = reduce(lambda x,y : x+" >> "+y, steps)  # the lambda function takes two arguments and returns their sum.
+                                                    # when 'numbers' List is passed through the lambda function, it takes each pair of consecutive elements and returns their sum. Thus, finally returns the sum of the whole List
+
+print(sum_of_numbers)
