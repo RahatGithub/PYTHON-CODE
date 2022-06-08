@@ -7,13 +7,20 @@ members = ["Ashfak", "Nafiz", "Omur", "Mustafiz"]
 modes = ["Read(0), Write(1)"]
 tasks = ["Push ups(0), Seat ups(1), Bench press(2)"]
 
-base_dir = 'Documentation/TextFiles'
+base_dir = '../Documentation/TextFiles/'  # <base_dir> should be revised everytime the directory is changed/modified
 
-for member in members:
-    # Creating files named after every member. Here, 'x' is the 'exclusive file mode.
-    with open(f"{base_dir}/{member}.txt", "x") as file:
-        cur_time = getTime()
-        file.write(f"{cur_time} >> {member} just joined!")
+
+# This portion should be run only once. Once the files are created then this portion will cause error.
+######################################################################################################
+try:
+    for member in members:
+        # Creating files named after every member. Here, 'x' is the 'exclusive file mode.
+        with open(f"{base_dir}/{member}.txt", "x") as file:
+            cur_time = getTime()
+            file.write(f"{cur_time} >> {member} just joined!")
+except:
+    pass
+######################################################################################################
 
 
 cont = 'y'  # This variable stores the user's choice(y/n) whether he wants to continue or not.
