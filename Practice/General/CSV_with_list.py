@@ -6,7 +6,7 @@ titles = ["Product Code", "Product Name", "Price", "Seller"]
 
 prd1 = ["20114521", "Garnier Face wash", "490", "Manikpur Store"]
 
-prd2 = ["20114691", "Lionbeard beard oil", "340", "Biharilal Store"]
+prd2 = ["20114691", "Lionbeard beard oil", "34,000", "Biharilal Store"]
 
 prd3 = ["20418521", "All clear shampoo", "210", "MBM Store"]
 
