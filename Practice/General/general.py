@@ -1,20 +1,10 @@
-class Any:
 
-    def printSomething(self):
-        print("nothing")
+# 2-D List
+# matrix = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
+  
+# # Nested List Comprehension to flatten a given 2-D matrix
+# flatten_matrix = [val for sublist in matrix for val in sublist]
+  
+# print(flatten_matrix)
 
-    def printSomething(self, text):
-        print(text)
-
-    def printSomething(self, num1, num2):
-        print("total: ", num1 + num2)
-
-
-
-a = Any()
-
-a.printSomething()
-
-a.printSomething("is this working?")
-
-a.printSomething(3,7)
+brands = ['Bajaj', 'KTM', 'Hero', 'TVS', 'Yamaha']
