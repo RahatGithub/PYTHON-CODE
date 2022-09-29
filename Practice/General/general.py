@@ -1,4 +1,22 @@
-scores = {'Tamim':22, 'Shakib':58, 'Mushfiq':67, 'Mahmudullah':19}
+import csv
 
-for index, (key, val) in enumerate(scores.items()):
-    print(f"{index} {key} scored {val} runs" )
+def readCSV(reader):
+    for row in reader:
+        yield row
+
+# f1 = open('energy_data.csv', 'r')
+
+reader = csv.reader('energy_data.csv') 
+
+print([row for row in readCSV(reader)])
+
+
+# f2=open("new_data.csv", "w")
+
+# writes = csv.writer(file1,delimiter=' ',quoting=csv.QUOTE_ALL)
+# g=mygen(reader)
+# for x in g:
+#     writes.writerow([x])
+
+
+# f1.close()
